@@ -2,4 +2,13 @@
 
 html, body, #root {
 	height: 100%;
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.font-primary {
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.font-secondary {
+	font-family: 'Shrikhand', cursive;
 }
