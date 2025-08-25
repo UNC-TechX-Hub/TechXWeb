@@ -26,6 +26,9 @@ importers:
       react-dom:
         specifier: ^19.1.1
         version: 19.1.1(react@19.1.1)
+      react-router-dom:
+        specifier: ^7.8.2
+        version: 7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       three:
         specifier: ^0.167.1
         version: 0.167.1
@@ -45,6 +48,9 @@ importers:
       '@types/react-dom':
         specifier: ^19.1.7
         version: 19.1.7(@types/react@19.1.11)
+      '@types/react-router-dom':
+        specifier: ^5.3.3
+        version: 5.3.3
       '@vitejs/plugin-react':
         specifier: ^5.0.0
         version: 5.0.1(vite@7.1.3(jiti@2.5.1)(lightningcss@1.30.1))
@@ -711,6 +717,9 @@ packages:
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
 
+  '@types/history@4.7.11':
+    resolution: {integrity: sha512-qjDJRrmvBMiTx+jyLxvLfJU7UznFuokDv4f3WRuriHKERccVpFU+8XMQUAbDzoiJCsmexxRExQeMwwCdamSKDA==}
+
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
@@ -728,6 +737,12 @@ packages:
     resolution: {integrity: sha512-+WHarFkJevhH1s655qeeSEf/yxFST0dVRsmSqUgxG8mMOKqycgYBv2wVpyubBY7MX8KiX5FQ03rNIwrxfm7Bmw==}
     peerDependencies:
       '@types/react': '*'
+
+  '@types/react-router-dom@5.3.3':
+    resolution: {integrity: sha512-kpqnYK4wcdm5UaWI3fLcELopqLrHgLqNsdpHauzlQktfkHL3npOSwtj1Uz9oKBAzs7lFtVkV8j83voAz2D8fhw==}
+
+  '@types/react-router@5.1.20':
+    resolution: {integrity: sha512-jGjmu/ZqS7FjSH6owMcD5qpq19+1RS9DeVRqfl1FeBMxTDQAGwlMWOcs52NDoXaNKyG3d1cYQFMs9rCrb88o9Q==}
 
   '@types/react@19.1.11':
     resolution: {integrity: sha512-lr3jdBw/BGj49Eps7EvqlUaoeA0xpj3pc0RoJkHpYaCHkVK7i28dKyImLQb3JVlqs3aYSXf7qYuWOW/fgZnTXQ==}
@@ -878,6 +893,10 @@ packages:
 
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
+
+  cookie@1.0.2:
+    resolution: {integrity: sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==}
+    engines: {node: '>=18'}
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -1349,6 +1368,23 @@ packages:
     resolution: {integrity: sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ==}
     engines: {node: '>=0.10.0'}
 
+  react-router-dom@7.8.2:
+    resolution: {integrity: sha512-Z4VM5mKDipal2jQ385H6UBhiiEDlnJPx6jyWsTYoZQdl5TrjxEV2a9yl3Fi60NBJxYzOTGTTHXPi0pdizvTwow==}
+    engines: {node: '>=20.0.0'}
+    peerDependencies:
+      react: '>=18'
+      react-dom: '>=18'
+
+  react-router@7.8.2:
+    resolution: {integrity: sha512-7M2fR1JbIZ/jFWqelpvSZx+7vd7UlBTfdZqf6OSdF9g6+sfdqJDAWcak6ervbHph200ePlu+7G8LdoiC3ReyAQ==}
+    engines: {node: '>=20.0.0'}
+    peerDependencies:
+      react: '>=18'
+      react-dom: '>=18'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+
   react-use-measure@2.1.7:
     resolution: {integrity: sha512-KrvcAo13I/60HpwGO5jpW7E9DfusKyLPLvuHlUyP5zqnmAPhNc6qTRjUQrdTADl0lpPpDVU2/Gg51UlOGHXbdg==}
     peerDependencies:
@@ -1392,6 +1428,9 @@ packages:
     resolution: {integrity: sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA==}
     engines: {node: '>=10'}
     hasBin: true
+
+  set-cookie-parser@2.7.1:
+    resolution: {integrity: sha512-IOc8uWeOZgnb3ptbCURJWNjWUPcO3ZnTTdzsurqERrP6nPyv+paC55vJM0LpOlT2ne+Ix+9+CRG1MNLlyZ4GjQ==}
 
   shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
@@ -2071,6 +2110,8 @@ snapshots:
 
   '@types/estree@1.0.8': {}
 
+  '@types/history@4.7.11': {}
+
   '@types/json-schema@7.0.15': {}
 
   '@types/react-dom@19.1.7(@types/react@19.1.11)':
@@ -2083,6 +2124,17 @@ snapshots:
 
   '@types/react-reconciler@0.32.0(@types/react@19.1.11)':
     dependencies:
+      '@types/react': 19.1.11
+
+  '@types/react-router-dom@5.3.3':
+    dependencies:
+      '@types/history': 4.7.11
+      '@types/react': 19.1.11
+      '@types/react-router': 5.1.20
+
+  '@types/react-router@5.1.20':
+    dependencies:
+      '@types/history': 4.7.11
       '@types/react': 19.1.11
 
   '@types/react@19.1.11':
@@ -2274,6 +2326,8 @@ snapshots:
   concat-map@0.0.1: {}
 
   convert-source-map@2.0.0: {}
+
+  cookie@1.0.2: {}
 
   cross-spawn@7.0.6:
     dependencies:
@@ -2700,6 +2754,20 @@ snapshots:
 
   react-refresh@0.17.0: {}
 
+  react-router-dom@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+    dependencies:
+      react: 19.1.1
+      react-dom: 19.1.1(react@19.1.1)
+      react-router: 7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+
+  react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+    dependencies:
+      cookie: 1.0.2
+      react: 19.1.1
+      set-cookie-parser: 2.7.1
+    optionalDependencies:
+      react-dom: 19.1.1(react@19.1.1)
+
   react-use-measure@2.1.7(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
       react: 19.1.1
@@ -2749,6 +2817,8 @@ snapshots:
   semver@6.3.1: {}
 
   semver@7.7.2: {}
+
+  set-cookie-parser@2.7.1: {}
 
   shebang-command@2.0.0:
     dependencies:

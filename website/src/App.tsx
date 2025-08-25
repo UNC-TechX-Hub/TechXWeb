@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header';
 import Hero from './components/hero';
 import CompanyLogosGrid from './components/companies';
 import Footer from './components/footer';
+import Members from './components/members';
 
-export default function App() {
+function HomePage() {
   const [isVisible, setIsVisible] = useState({});
   const [whoMousePos, setWhoMousePos] = useState({ x: 50, y: 50 });
   const [whoIsHovering, setWhoIsHovering] = useState(false);
@@ -101,8 +103,7 @@ export default function App() {
   };
 
   return (
-    <div style={{ backgroundColor: '#000', minHeight: '100vh', color: 'white' }}>
-      <Header />
+    <>
       <Hero />
       
       <main style={{ 
@@ -329,7 +330,6 @@ export default function App() {
         </section>
         <CompanyLogosGrid />
       </main>
-      <Footer />
 
       <style>{`
         @media (max-width: 768px) {
@@ -339,6 +339,21 @@ export default function App() {
           }
         }
       `}</style>
-    </div>
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <div style={{ backgroundColor: '#000', minHeight: '100vh', color: 'white' }}>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/members" element={<Members />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }

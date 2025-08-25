@@ -1,39 +1,55 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Header() {
-  const [mousePos, setMousePos] = useState({ x: 50, y: 50 })
-  const [isHovering, setIsHovering] = useState(false)
-  const [isVisible, setIsVisible] = useState(false)
-  const headerRef = useRef(null)
+  const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
+  const [isHovering, setIsHovering] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const headerRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsVisible(true)
-    }, 100)
+      setIsVisible(true);
+    }, 100);
     
-    return () => clearTimeout(timer)
-  }, [])
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleMouseMove = (e) => {
     if (headerRef.current) {
-      const rect = headerRef.current.getBoundingClientRect()
-      const x = ((e.clientX - rect.left) / rect.width) * 100
-      const y = ((e.clientY - rect.top) / rect.height) * 100
+      const rect = headerRef.current.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
       
       setTimeout(() => {
-        setMousePos({ x, y })
-      }, 50)
+        setMousePos({ x, y });
+      }, 50);
       
-      setIsHovering(true)
+      setIsHovering(true);
     }
-  }
+  };
 
   const handleMouseLeave = () => {
-    setIsHovering(false)
+    setIsHovering(false);
     setTimeout(() => {
-      setMousePos({ x: 50, y: 50 })
-    }, 100)
-  }
+      setMousePos({ x: 50, y: 50 });
+    }, 100);
+  };
+
+  const getNavItemStyle = (path: string) => ({
+    color: location.pathname === path ? 'rgba(56, 182, 255, 1)' : 'rgba(255, 255, 255, 0.8)',
+    fontSize: '20px',
+    fontWeight: location.pathname === path ? '600' : '500',
+    textDecoration: 'none',
+    transition: 'color 0.2s ease',
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    padding: '8px 16px',
+    borderRadius: '20px',
+    backgroundColor: location.pathname === path ? 'rgba(56, 182, 255, 0.1)' : 'transparent'
+  });
 
   return (
     <div style={{ 
@@ -87,19 +103,26 @@ export default function Header() {
           }}
         />
 
-        <a 
-          href="/" 
+        <Link 
+          to="/"
           style={{
             color: 'white',
             fontWeight: 'bold',
             fontSize: '32px',
             textDecoration: 'none',
             position: 'relative',
-            zIndex: 1
+            zIndex: 1,
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            transition: 'color 0.2s ease'
           }}
+          onMouseEnter={(e) => e.target.style.color = 'rgba(56, 182, 255, 1)'}
+          onMouseLeave={(e) => e.target.style.color = 'white'}
         >
           TechX
-        </a>
+        </Link>
+        
         <nav style={{ 
           display: 'flex', 
           alignItems: 'center', 
@@ -107,50 +130,64 @@ export default function Header() {
           position: 'relative',
           zIndex: 1
         }}>
-          <a 
-            href="#members" 
-            style={{
-              color: 'rgba(255, 255, 255, 0.8)',
-              fontSize: '20px',
-              fontWeight: '500',
-              textDecoration: 'none',
-              transition: 'color 0.2s ease'
+          <Link 
+            to="/members"
+            style={getNavItemStyle('/members')}
+            onMouseEnter={(e) => {
+              if (location.pathname !== '/members') {
+                e.target.style.color = 'white';
+                e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+              }
             }}
-            onMouseEnter={(e) => e.target.style.color = 'white'}
-            onMouseLeave={(e) => e.target.style.color = 'rgba(255, 255, 255, 0.8)'}
+            onMouseLeave={(e) => {
+              if (location.pathname !== '/members') {
+                e.target.style.color = 'rgba(255, 255, 255, 0.8)';
+                e.target.style.backgroundColor = 'transparent';
+              }
+            }}
           >
             Members
-          </a>
-          <a 
-            href="#join" 
-            style={{
-              color: 'rgba(255, 255, 255, 0.8)',
-              fontSize: '20px',
-              fontWeight: '500',
-              textDecoration: 'none',
-              transition: 'color 0.2s ease'
+          </Link>
+          
+          <Link 
+            to="/join"
+            style={getNavItemStyle('/join')}
+            onMouseEnter={(e) => {
+              if (location.pathname !== '/join') {
+                e.target.style.color = 'white';
+                e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+              }
             }}
-            onMouseEnter={(e) => e.target.style.color = 'white'}
-            onMouseLeave={(e) => e.target.style.color = 'rgba(255, 255, 255, 0.8)'}
+            onMouseLeave={(e) => {
+              if (location.pathname !== '/join') {
+                e.target.style.color = 'rgba(255, 255, 255, 0.8)';
+                e.target.style.backgroundColor = 'transparent';
+              }
+            }}
           >
             Join
-          </a>
-          <a 
-            href="#gallery" 
-            style={{
-              color: 'rgba(255, 255, 255, 0.8)',
-              fontSize: '20px',
-              fontWeight: '500',
-              textDecoration: 'none',
-              transition: 'color 0.2s ease'
+          </Link>
+          
+          <Link 
+            to="/gallery"
+            style={getNavItemStyle('/gallery')}
+            onMouseEnter={(e) => {
+              if (location.pathname !== '/gallery') {
+                e.target.style.color = 'white';
+                e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+              }
             }}
-            onMouseEnter={(e) => e.target.style.color = 'white'}
-            onMouseLeave={(e) => e.target.style.color = 'rgba(255, 255, 255, 0.8)'}
+            onMouseLeave={(e) => {
+              if (location.pathname !== '/gallery') {
+                e.target.style.color = 'rgba(255, 255, 255, 0.8)';
+                e.target.style.backgroundColor = 'transparent';
+              }
+            }}
           >
             Gallery
-          </a>
+          </Link>
         </nav>
       </header>
     </div>
-  )
+  );
 }

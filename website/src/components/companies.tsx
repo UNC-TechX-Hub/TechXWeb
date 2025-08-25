@@ -10,9 +10,10 @@ const CompanyLogosGrid: React.FC = () => {
   const companies: Company[] = [
     { name: 'Amazon', logo: '/logos/amazon.png', url: 'https://www.amazon.com' },
     { name: 'CERN', logo: '/logos/cern.png', url: 'https://home.cern' },
+    { name: 'Cisco', logo: '/logos/cisco.png', url: 'https://www.cisco.com' },
     { name: 'Contrary VC', logo: '/logos/contrary-vc.png', url: 'https://contrary.com' },
     { name: 'Delphi.ai', logo: '/logos/delphi-ai.png', url: 'https://delphi.ai' },
-    { name: 'Fidelity', logo: '/logos/fidelity.png', url: 'https://www.fidelity.com' },
+    { name: 'Fidelity', logo: '/logos/fid.png', url: 'https://www.fidelity.com' },
     { name: 'JP Morgan Chase', logo: '/logos/jpmc.png', url: 'https://www.jpmorganchase.com' },
     { name: 'KPMG', logo: '/logos/kpmg.png', url: 'https://home.kpmg' },
     { name: 'Lowe\'s', logo: '/logos/lowes.png', url: 'https://www.lowes.com' },
