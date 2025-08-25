@@ -163,7 +163,7 @@ export default function App() {
               fontSize: '32px', 
               fontWeight: 'bold', 
               margin: '0',
-              color: '#000000',
+              color: '#FFFFFF',
               lineHeight: '1.2',
               position: 'relative',
               zIndex: 1
@@ -237,7 +237,7 @@ export default function App() {
               fontWeight: 'bold', 
               margin: '0',
               lineHeight: '1.2',
-              color: '#000000',
+              color: '#FFFFFF',
               position: 'relative',
               zIndex: 1
             }}>
@@ -309,7 +309,7 @@ export default function App() {
               fontSize: '32px', 
               fontWeight: 'bold', 
               margin: '0',
-              color: '#000000',
+              color: '#FFFFFF',
               lineHeight: '1.2',
               position: 'relative',
               zIndex: 1
