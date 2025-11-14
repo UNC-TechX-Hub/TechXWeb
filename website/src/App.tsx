@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, type MouseEvent } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header';
 import Hero from './components/hero';
@@ -7,16 +7,16 @@ import Footer from './components/footer';
 import Members from './components/members';
 
 function HomePage() {
-  const [isVisible, setIsVisible] = useState({});
+  const [isVisible, setIsVisible] = useState<Record<string, boolean>>({});
   const [whoMousePos, setWhoMousePos] = useState({ x: 50, y: 50 });
   const [whoIsHovering, setWhoIsHovering] = useState(false);
   const [whatMousePos, setWhatMousePos] = useState({ x: 50, y: 50 });
   const [whatIsHovering, setWhatIsHovering] = useState(false);
   const [whereMousePos, setWhereMousePos] = useState({ x: 50, y: 50 });
   const [whereIsHovering, setWhereIsHovering] = useState(false);
-  const whoHeaderRef = useRef(null);
-  const whatHeaderRef = useRef(null);
-  const whereHeaderRef = useRef(null);
+  const whoHeaderRef = useRef<HTMLElement>(null);
+  const whatHeaderRef = useRef<HTMLElement>(null);
+  const whereHeaderRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -39,7 +39,7 @@ function HomePage() {
     return () => observer.disconnect();
   }, []);
 
-  const handleWhoMouseMove = (e) => {
+  const handleWhoMouseMove = (e: MouseEvent<HTMLElement>) => {
     if (whoHeaderRef.current) {
       const rect = whoHeaderRef.current.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -60,7 +60,7 @@ function HomePage() {
     }, 100);
   };
 
-  const handleWhatMouseMove = (e) => {
+  const handleWhatMouseMove = (e: MouseEvent<HTMLElement>) => {
     if (whatHeaderRef.current) {
       const rect = whatHeaderRef.current.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -81,7 +81,7 @@ function HomePage() {
     }, 100);
   };
 
-  const handleWhereMouseMove = (e) => {
+  const handleWhereMouseMove = (e: MouseEvent<HTMLElement>) => {
     if (whereHeaderRef.current) {
       const rect = whereHeaderRef.current.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 100;
