@@ -1,0 +1,17 @@
+{
+  "name": "techxweb",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TechX Web Monorepo",
+  "scripts": {
+    "dev": "pnpm --filter website dev",
+    "build": "pnpm --filter website build",
+    "lint": "pnpm --filter website lint",
+    "preview": "pnpm --filter website preview"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}

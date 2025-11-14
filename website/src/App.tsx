@@ -12,7 +12,7 @@ function App() {
       />
       <div className="absolute mx-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
         <img
-          src="/TechX-Name-White-447x150.png"
+          src="/newtechxwhite.png"
           alt="TechX Logo"
           className="w-[447px] h-[150px] pointer-events-none select-none drop-shadow-[0_0_32px_rgba(255,255,255,0.7)]"
           style={{ filter: 'drop-shadow(0 0 32px rgba(255,255,255,0.7))' }}
