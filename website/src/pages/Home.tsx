@@ -1,4 +1,5 @@
 import { useEffect, useId } from 'react'
+import FaultyTerminal from '../components/FaultyTerminal'
 
 export default function Home() {
   const titleId = useId()
@@ -8,20 +9,36 @@ export default function Home() {
   }, [])
 
   return (
-    <main aria-labelledby={titleId} className="max-w-4xl mx-auto p-8 leading-relaxed">
-      <header className="mb-6">
-        <h1 id={titleId} className="text-3xl font-bold mb-2">Home</h1>
-        <p className="text-gray-600">Welcome. Replace this boilerplate with your content.</p>
-      </header>
-
-      <section className="bg-gray-50 p-4 rounded-lg">
-        <h2 className="text-2xl font-semibold mb-3">Getting Started</h2>
-        <ul className="list-disc list-inside space-y-2">
-          <li>Add components and styles here.</li>
-          <li>Connect data or APIs as needed.</li>
-          <li>Update the document title and metadata.</li>
-        </ul>
-      </section>
+    <main aria-labelledby={titleId} className="h-screen relative">
+      <FaultyTerminal
+        scale={2}
+        gridMul={[2, 1]}
+        digitSize={1.2}
+        timeScale={.75}
+        pause={false}
+        scanlineIntensity={1}
+        glitchAmount={1}
+        flickerAmount={1}
+        noiseAmp={1}
+        chromaticAberration={0}
+        dither={0}
+        curvature={0}
+        tint="#38B6FF"
+        mouseReact={true}
+        mouseStrength={0.5}
+        pageLoadAnimation={true}
+        brightness={.5}
+      />
+      <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+        <img
+          src="/techxwhite.avif"
+          alt="TechX Logo"
+          className="w-128 h-auto mb-4"
+        />
+        <p className="text-[var(--alice)] text-2xl font-semibold tracking-wide">
+          Via ad Excellentiam
+        </p>
+      </div>
     </main>
   )
 }

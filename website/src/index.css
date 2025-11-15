@@ -1,6 +1,138 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-
 @import "tailwindcss";
+
+/* Custom Fonts */
+/* 3270 IBM Condensed - Monospace */
+@font-face {
+  font-family: '3270 IBM';
+  src: url('/Fonts/3270 IBM CON/3270Condensed-Regular.otf') format('opentype'),
+       url('/Fonts/3270 IBM CON/3270Condensed-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* BD Colonius - Display */
+@font-face {
+  font-family: 'BD Colonius';
+  src: url('/Fonts/Bd colonius/BD-Colonius.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* EB Garamond - Serif */
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/Fonts/EB Garamond/Garamond - Garamond - Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/Fonts/EB Garamond/Garamond-Italic - Garamond - Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/Fonts/EB Garamond/Garamond-Bold - Garamond - Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/Fonts/EB Garamond/Garamond-BoldItalic-04.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Satoshi - Sans Serif */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/Fonts/Satoshi/Satoshi-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/Fonts/Satoshi/Satoshi-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/Fonts/Satoshi/Satoshi-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/Fonts/Satoshi/Satoshi-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/Fonts/Satoshi/Satoshi-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/Fonts/Satoshi/Satoshi-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/Fonts/Satoshi/Satoshi-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/Fonts/Satoshi/Satoshi-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/Fonts/Satoshi/Satoshi-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/Fonts/Satoshi/Satoshi-BlackItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
 
 :root {
   --white: #FFFFFF;
@@ -15,6 +147,20 @@
   --gray-700: #374151;
   --gray-800: #1f2937;
   --gray-900: #111827;
+  
+  /* Custom Color Palette */
+  --cosmix: #38B6FF;
+  --surf: #3CA0DB;
+  --bacteria: #437592;
+  --sky: #69C8FF;
+  --steel: #8FA7B6;
+  --storm: #46606E;
+  --alice: #F0F8FF;
+  --obsidian: #0B1215;
+  --ash: #E2E3E5;
+  --glacial: #C1CFD4;
+  --light-grey: #E6EBEE;
+  --lilac: #EDEBF1;
   
   /* Blue gradient system */
   --blue-50: #eff6ff;
@@ -32,9 +178,11 @@
   --blue-light: #60c5ff;
   --blue-dark: #1a9de8;
   
---font-sans: "DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-               Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
-               "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* Custom font families */
+  --font-sans: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "EB Garamond", Georgia, serif;
+  --font-mono: "3270 IBM", ui-monospace, monospace;
+  --font-display: "BD Colonius", serif;
 }
 
 * {
